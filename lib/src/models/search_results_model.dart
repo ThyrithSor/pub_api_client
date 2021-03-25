@@ -19,7 +19,7 @@ abstract class SearchResults implements _$SearchResults {
       _$SearchResultsFromJson(json);
 
   Future<SearchResults> nextResults() async {
-    final response = await http.get(next);
+    final response = await http.get(Uri.parse(next));
     return SearchResults.fromJson(
         jsonDecode(response.body) as Map<String, dynamic>);
   }

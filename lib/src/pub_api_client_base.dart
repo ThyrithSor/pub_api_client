@@ -34,7 +34,7 @@ class PubClient {
   }
 
   Future<Map<String, dynamic>> _fetch(String url) async {
-    final response = await _client.get(url);
+    final response = await _client.get(Uri.parse(url));
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
